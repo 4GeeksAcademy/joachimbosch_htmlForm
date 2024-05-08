@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Payment form</title>
+</head>
+<body>
+    <div class="container border rounded p-0 mt-2 col-12">
+        <div class="bg-light border-bottom px-3 py-2">
+            <h3>Payment form example</h3>
+        </div>
+        <div class="errorMessage border-danger rounded mx-3 mt-2 p-3 d-flex align-items-center">
+            <span>Some fields are missing</span>
+        </div>
+        <form action="/sendithere">  
+                <div class="d-flex flex-row">
+                <div class="form-group px-3 py-2 col-md-5">
+                    <label for="inputCardNumber">Card #</label>
+                    <input type="text" class="form-control mt-1" id="inputCardNumber" placeholder="XXXX XXXX XXXX XXXX" required>
+                </div>
+                <div class="form-group px-3 py-2 col-md-3">
+                    <label for="inputCvc">CVC #</label>
+                    <input type="text" class="form-control mt-1" id="inputCvc" placeholder="XXX" required>
+                </div>
+                <div class="form-group px-3 py-2 col-md-4">
+                    <label for="amount">Amount</label>
+                    <div class="d-flex flew-row align-items-center">
+                        <span class="me-1 mt-1">$</span>
+                        <input type="text" class="form-control mt-1" id="amount" placeholder="Amount" required>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-row">
+                <div class="form-group px-3 py-2 col-md-6">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control mt-1" id="firstName" required>
+                </div>
+                <div class="form-group px-3 py-2 col-md-6">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control mt-1" id="lastName" required>
+                </div>
+            </div>
+            <div class="d-flex flex-row">
+                <div class="form-group px-3 py-2 col-md-6">
+                    <label for="City">City</label>
+                    <input type="text" class="form-control mt-1" id="City" required>
+                </div>
+                <div class="form-group px-3 py-2 col-md-3">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control mt-1" required>
+                      <option selected>Pick a state</option>
+                      <option>California</option>
+                      <option>Texas</option>
+                      <option>New York</option>
+                      <option>Washington</option>
+                      <option>Florida</option>
+                      <option>West-Virginia</option>
+                    </select>
+                  </div>
+                <div class="form-group px-3 py-2 col-md-3">
+                  <label for="postalCode">Postal Code</label>
+                  <input type="email" class="form-control mt-1" id="postalCode" required>
+                </div>
+            </div>
+            
+            <div class="d-flex flex-row">
+                <div class="form-group px-3 py-2 col-md-3">
+                    <legend class="col-form-label">We accept: </legend>
+                        <div class="d-flex justify-content-center bg-secondary rounded py-1">
+                            <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="visa" required>
+                            <label class="form-check-label" for="gridRadios1">
+                                <i class="fa-brands fa-cc-visa" style="color: #ffffff;"></i>
+                            </label>
+                            </div>
+                            <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="mastercard" required>
+                            <label class="form-check-label" for="gridRadios2">
+                                <i class="fa-brands fa-cc-mastercard" style="color: #ffffff;"></i>
+                            </label>
+                            </div>
+                            <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="amex" required>
+                            <label class="form-check-label" for="gridRadios3">
+                                <i class="fa-brands fa-cc-amex" style="color: #ffffff;"></i>
+                            </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="paypal" required>
+                                <label class="form-check-label" for="gridRadios3">
+                                    <i class="fa-brands fa-cc-paypal" style="color: #ffffff;"></i>
+                                </label>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="form-group px-3 py-2 col-md-6">
+                    <label for="additionalText">Message</label>
+                    <textarea class="form-control mt-1" id="additionalText" rows="3"></textarea>
+                    <p><i>Add any notes here.</i></p>
+                </div>
+            </div>
+            <div class="d-flex px-3 py-2 justify-content-end bg-light">
+                <button type="cancel" class="btn btn-secondary me-2">Cancel</button>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+          </form>
+
+        
+    </div>
+
+    <!--Bootstrap do not remove-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+
